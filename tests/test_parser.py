@@ -1,16 +1,20 @@
-from sss_beneficiarios_hospitales.data import DataBeneficiariosSSSHospital
+import json
+import os
+from sss_beneficiarios_hospitales.parser import SSSParser
 
+here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-def test_query_afiliado():
-    dbh = DataBeneficiariosSSSHospital(user='FAKE', password='FAKE')
-    res = dbh.query(dni='full-afiliado')
-    assert res['ok']
-    data = res['resultados']
+def test_parser_afiliado():
+    html = './sss_beneficiarios_hospitales/html-samples/full-afiliado.html'
+    
+    parser = SSSParser(html)
+    data = parser.get_all_data()
+    # print(json.dumps(data, indent=2))
+
     assert data['title'] == "Superintendencia de Servicios de Salud"
     assert data["hay_afiliacion"]
     assert not data["no_hay_afiliacion"]
 
-    assert len(data['tablas']) == 2
     for d in data['tablas']:
         assert "name" in d
         is_afiliacion = "AFILIACION" in [v for k, v in d.items() if k == 'name']
@@ -35,13 +39,15 @@ def test_query_afiliado():
             assert d['data']["C\u00f3digo de Obra Social"] == "5-0080-7"
             assert d['data']["Denominaci\u00f3n Obra Social"] == "INSTITUTO NACIONAL DE SERVICIOS SOCIALES PARA JUBILADOS Y PENSIONADOS"
             assert d['data']["Fecha Alta Obra Social"] == "01-08-2012"
+    
+    
+def test_parser_afiliado_con_empleador():
+    html = './sss_beneficiarios_hospitales/html-samples/full-afiliado-con-empleador.html'
+    
+    parser = SSSParser(html)
+    data = parser.get_all_data()
+    # print(json.dumps(data, indent=2))
 
-
-def test_query_afiliado_con_empleador():
-    dbh = DataBeneficiariosSSSHospital(user='FAKE', password='FAKE')
-    res = dbh.query(dni='full-afiliado-con-empleador')
-    assert res['ok']
-    data = res['resultados']
     assert data['title'] == "Superintendencia de Servicios de Salud"
     assert data["hay_afiliacion"]
     assert not data["no_hay_afiliacion"]
@@ -77,11 +83,13 @@ def test_query_afiliado_con_empleador():
             assert d['data']["Ultimo Per\u00edodo Declarado"] == "02-2020"
 
 
-def test_query_no_afiliado():
-    dbh = DataBeneficiariosSSSHospital(user='FAKE', password='FAKE')
-    res = dbh.query(dni='full-sin-datos')
-    assert res['ok']
-    data = res['resultados']
+def test_parser_no_afiliado():
+    html = './sss_beneficiarios_hospitales/html-samples/full-sin-datos.html'
+
+    parser = SSSParser(html)
+    data = parser.get_all_data()
+    # print(json.dumps(data, indent=2))
+
     assert data['title'] == "Superintendencia de Servicios de Salud"
     assert not data["hay_afiliacion"]
     assert data["no_hay_afiliacion"]
@@ -95,4 +103,3 @@ def test_query_no_afiliado():
         assert d['data']["Tipo Documento"] == "DU"
         assert d['data']["Nro Documento"] == "2XXXXX1"
         assert d['data']["CUIL"] == "202XXXXX18"
-
