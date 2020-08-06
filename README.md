@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/cluster311/sss-beneficiarios.svg?branch=master)](https://travis-ci.org/cluster311/sss-beneficiarios)
 # Registro privado de beneficiarios de Obras Sociales de Argentina
 
 Consultas al Padrón de Beneficiarios de los Agentes Nacionales del Seguro de Salud. Requiere credenciales de Hospital habilitado.
