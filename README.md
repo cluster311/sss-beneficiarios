@@ -2,7 +2,7 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/cluster311/sss-beneficiarios/total?style=for-the-badge)
 ![GitHub Issues](https://img.shields.io/github/issues/cluster311/sss-beneficiarios?style=for-the-badge)
 ![GitHub PR](https://img.shields.io/github/issues-pr/cluster311/sss-beneficiarios?style=for-the-badge)
-![Licence](https://img.shields.io/github/licence/cluster311/sss-beneficiarios?style=for-the-badge)
+![Licence](https://img.shields.io/github/license/cluster311/sss-beneficiarios?style=for-the-badge)
 ![Twitter URL](https://img.shields.io/twitter/url?style=for-the-badge&url=https%3A%2F%2Ftwitter.com%2Fcluster311)
 ![Pypi py version](https://img.shields.io/pypi/pyversions/sss-beneficiarios-hospitales?style=for-the-badge)
 ![Licence](https://img.shields.io/github/last-commit/cluster311/sss-beneficiarios?style=for-the-badge)
