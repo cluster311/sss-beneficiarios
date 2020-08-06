@@ -9,7 +9,7 @@ la Superintendencia de Servicios de Salud
 
 ``` python
 usuario = 'FAKE'  # usuario de prueba
-clave = 'FAKE'   · clave de pruebas
+clave = 'FAKE'   # clave de pruebas
 
 from sss_beneficiarios_hospitales.data import DataBeneficiariosSSSHospital
 dbh = DataBeneficiariosSSSHospital(user=usuario, password=clave)
@@ -56,7 +56,7 @@ Resultados para afiliados (la seccion `DECLARADO_POR_EMPLEADOR` podría no estar
                 'name': 'AFILIACION', 
                 'data': {
                     'Parentesco': 'TITULAR', 
-                    'CUIL': '20-13535638-8', 
+                    'CUIL': '20-1XXXXXX8-8', 
                     'Tipo de documento': 'DOCUMENTO UNICO', 
                     'Número de documento': '1XXXXX8', 
                     'Apellido y nombre': 'GOMEZ GONZALO', 
@@ -90,7 +90,7 @@ Resultados para afiliados (la seccion `DECLARADO_POR_EMPLEADOR` podría no estar
 
 ## Install
 
-Instalar desde [Pypi](XXXX)
+Instalar desde [Pypi](https://pypi.org/project/sss-beneficiarios-hospitales/)
 
 ```
 pip install sss_beneficiarios_hospitales
