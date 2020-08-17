@@ -1,11 +1,11 @@
-![Travis (.org)](https://img.shields.io/travis/cluster311/sss-beneficiarios?style=for-the-badge)
-![GitHub All Releases](https://img.shields.io/github/downloads/cluster311/sss-beneficiarios/total?style=for-the-badge)
-![GitHub Issues](https://img.shields.io/github/issues/cluster311/sss-beneficiarios?style=for-the-badge)
-![GitHub PR](https://img.shields.io/github/issues-pr/cluster311/sss-beneficiarios?style=for-the-badge)
-![Licence](https://img.shields.io/github/license/cluster311/sss-beneficiarios?style=for-the-badge)
-![Twitter URL](https://img.shields.io/twitter/url?style=for-the-badge&url=https%3A%2F%2Ftwitter.com%2Fcluster311)
-![Pypi py version](https://img.shields.io/pypi/pyversions/sss-beneficiarios-hospitales?style=for-the-badge)
-![Licence](https://img.shields.io/github/last-commit/cluster311/sss-beneficiarios?style=for-the-badge)
+[![Travis (.org)](https://img.shields.io/travis/cluster311/sss-beneficiarios?style=for-the-badge)](https://pypi.org/project/sss-beneficiarios-hospitales/)
+[![GitHub All Releases](https://img.shields.io/github/downloads/cluster311/sss-beneficiarios/total?style=for-the-badge)](https://github.com/cluster311/sss-beneficiarios/releases)
+[![GitHub Issues](https://img.shields.io/github/issues/cluster311/sss-beneficiarios?style=for-the-badge)](https://github.com/cluster311/sss-beneficiarios/issues)
+[![GitHub PR](https://img.shields.io/github/issues-pr/cluster311/sss-beneficiarios?style=for-the-badge)](https://github.com/cluster311/sss-beneficiarios/pulls)
+[![Licence](https://img.shields.io/github/license/cluster311/sss-beneficiarios?style=for-the-badge)](https://github.com/cluster311/sss-beneficiarios/blob/master/LICENSE)
+[![Twitter URL](https://img.shields.io/twitter/url?style=for-the-badge&url=https%3A%2F%2Ftwitter.com%2Fcluster311)](https://twitter.com/cluster311)
+[![Pypi py version](https://img.shields.io/pypi/pyversions/sss-beneficiarios-hospitales?style=for-the-badge)](https://pypi.org/project/sss-beneficiarios-hospitales/)
+[![Last Commit](https://img.shields.io/github/last-commit/cluster311/sss-beneficiarios?style=for-the-badge)](https://github.com/cluster311/sss-beneficiarios/commits/master)
 # Registro privado de beneficiarios de Obras Sociales de Argentina
 
 Consultas al Padrón de Beneficiarios de los Agentes Nacionales del Seguro de Salud. Requiere credenciales de Hospital habilitado.
