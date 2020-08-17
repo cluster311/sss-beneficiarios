@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
      name='sss_beneficiarios_hospitales',
-     version='0.8.113',
+     version='0.8.114',
      license='MIT',
      entry_points={
         },
