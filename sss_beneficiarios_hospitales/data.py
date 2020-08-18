@@ -90,10 +90,12 @@ class DataBeneficiariosSSSHospital:
         self._save_response('query', self.query_response)
         if self.fake_env:
             # DNI should be a file in html-samples folder e.g. "full-afiliado"
-            html = f'./sss_beneficiarios_hospitales/html-samples/{dni}.html'
+            html = f'/html-samples/{dni}.html'
             # dejar un valor predeterminado
             if not os.path.isfile(html):
-                html = f'./sss_beneficiarios_hospitales/html-samples/full-afiliado.html'
+                html = f'/html-samples/full-afiliado.html'
+            module_dir = os.path.dirname(__file__)
+            html = module_dir + html
         else:
             html = self.query_response.text
         self.parser = SSSParser(html)
@@ -163,4 +165,3 @@ class DataBeneficiariosSSSHospital:
             ret['error'] = error
         
         return ret
-            
