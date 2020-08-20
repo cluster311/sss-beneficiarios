@@ -1,4 +1,4 @@
-[![Travis (.org)](https://img.shields.io/travis/cluster311/sss-beneficiarios?style=for-the-badge)](https://pypi.org/project/sss-beneficiarios-hospitales/)
+[![Travis (.org)](https://img.shields.io/travis/cluster311/sss-beneficiarios?style=for-the-badge)](https://travis-ci.org/github/cluster311/sss-beneficiarios)
 [![GitHub All Releases](https://img.shields.io/github/downloads/cluster311/sss-beneficiarios/total?style=for-the-badge)](https://github.com/cluster311/sss-beneficiarios/releases)
 [![GitHub Issues](https://img.shields.io/github/issues/cluster311/sss-beneficiarios?style=for-the-badge)](https://github.com/cluster311/sss-beneficiarios/issues)
 [![GitHub PR](https://img.shields.io/github/issues-pr/cluster311/sss-beneficiarios?style=for-the-badge)](https://github.com/cluster311/sss-beneficiarios/pulls)
