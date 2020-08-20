@@ -7,9 +7,8 @@ def test_query_afiliado():
     assert res['ok']
     data = res['resultados']
     assert data['title'] == "Superintendencia de Servicios de Salud"
-    assert data["hay_afiliacion"]
-    assert not data["no_hay_afiliacion"]
-
+    assert data["afiliado"]
+    
     assert len(data['tablas']) == 2
     for d in data['tablas']:
         assert "name" in d
@@ -43,9 +42,8 @@ def test_query_afiliado_con_empleador():
     assert res['ok']
     data = res['resultados']
     assert data['title'] == "Superintendencia de Servicios de Salud"
-    assert data["hay_afiliacion"]
-    assert not data["no_hay_afiliacion"]
-
+    assert data["afiliado"]
+    
     for d in data['tablas']:
         assert "name" in d
         is_afiliacion = "AFILIACION" in [v for k, v in d.items() if k == 'name']
@@ -83,8 +81,7 @@ def test_query_no_afiliado():
     assert res['ok']
     data = res['resultados']
     assert data['title'] == "Superintendencia de Servicios de Salud"
-    assert not data["hay_afiliacion"]
-    assert data["no_hay_afiliacion"]
+    assert data["afiliado"] == False
     
     for d in data['tablas']:
         assert "name" in d

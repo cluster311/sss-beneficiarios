@@ -1,20 +1,20 @@
 import json
 import os
 from sss_beneficiarios_hospitales.parser import SSSParser
+from sss_beneficiarios_hospitales.data import get_html_sample
 
 here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def test_parser_afiliado():
-    html = './sss_beneficiarios_hospitales/html-samples/full-afiliado.html'
+    html = get_html_sample('full-afiliado')
     
     parser = SSSParser(html)
     data = parser.get_all_data()
     # print(json.dumps(data, indent=2))
 
     assert data['title'] == "Superintendencia de Servicios de Salud"
-    assert data["hay_afiliacion"]
-    assert not data["no_hay_afiliacion"]
-
+    assert data["afiliado"]
+    
     for d in data['tablas']:
         assert "name" in d
         is_afiliacion = "AFILIACION" in [v for k, v in d.items() if k == 'name']
@@ -42,16 +42,15 @@ def test_parser_afiliado():
     
     
 def test_parser_afiliado_con_empleador():
-    html = './sss_beneficiarios_hospitales/html-samples/full-afiliado-con-empleador.html'
+    html = get_html_sample('full-afiliado-con-empleador')
     
     parser = SSSParser(html)
     data = parser.get_all_data()
     # print(json.dumps(data, indent=2))
 
     assert data['title'] == "Superintendencia de Servicios de Salud"
-    assert data["hay_afiliacion"]
-    assert not data["no_hay_afiliacion"]
-
+    assert data["afiliado"]
+    
     for d in data['tablas']:
         assert "name" in d
         is_afiliacion = "AFILIACION" in [v for k, v in d.items() if k == 'name']
@@ -84,15 +83,14 @@ def test_parser_afiliado_con_empleador():
 
 
 def test_parser_no_afiliado():
-    html = './sss_beneficiarios_hospitales/html-samples/full-sin-datos.html'
+    html = get_html_sample('full-sin-datos')
 
     parser = SSSParser(html)
     data = parser.get_all_data()
     # print(json.dumps(data, indent=2))
 
     assert data['title'] == "Superintendencia de Servicios de Salud"
-    assert not data["hay_afiliacion"]
-    assert data["no_hay_afiliacion"]
+    assert data["afiliado"] == False
     
     for d in data['tablas']:
         assert "name" in d

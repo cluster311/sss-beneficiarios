@@ -25,10 +25,19 @@ class SSSParser:
     def get_all_data(self):
         s_tables = self.soup.find_all('table')
         
+        hay_afiliacion = self.keys['hay_afiliacion_vigente'] in self.raw_html
+        no_hay_afiliacion = self.keys['no_hay_afiliacion_vigente'] in self.raw_html
+        
+        if hay_afiliacion:
+            afiliado = True
+        elif no_hay_afiliacion:
+            afiliado = False
+        else:
+            afiliado = None
+
         data = {
             'title': self.soup.title.text,
-            'hay_afiliacion': self.keys['hay_afiliacion_vigente'] in self.raw_html,
-            'no_hay_afiliacion': self.keys['no_hay_afiliacion_vigente'] in self.raw_html,
+            'afiliado': afiliado,
             'tablas': [],
         }
 

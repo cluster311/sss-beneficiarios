@@ -33,8 +33,7 @@ Resultados para no afiliados
     'ok': True, 
     'resultados': {
         'title': 'Superintendencia de Servicios de Salud',
-        'hay_afiliacion': False,
-        'no_hay_afiliacion': True,
+        'afiliado': False,
         'tablas': [
             {
                 "name": "NO_AFILIADO",
@@ -57,8 +56,7 @@ Resultados para afiliados (la seccion `DECLARADO_POR_EMPLEADOR` podría no estar
     'ok': True, 
     'resultados': {
         'title': 'Superintendencia de Servicios de Salud', 
-        'hay_afiliacion': True, 
-        'no_hay_afiliacion': False, 
+        'afiliado': True, 
         'tablas': [
             {
                 'name': 'AFILIACION', 

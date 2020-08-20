@@ -32,7 +32,6 @@ class DataBeneficiariosSSSHospital:
         
         self.session.headers.update(default_headers)
         self.debug = False
-
         self.fake_env = user == 'FAKE' and password == 'FAKE'
 
     def login(self):
@@ -90,10 +89,10 @@ class DataBeneficiariosSSSHospital:
         self._save_response('query', self.query_response)
         if self.fake_env:
             # DNI should be a file in html-samples folder e.g. "full-afiliado"
-            html = f'./sss_beneficiarios_hospitales/html-samples/{dni}.html'
+            html = get_html_sample(dni)
             # dejar un valor predeterminado
             if not os.path.isfile(html):
-                html = f'./sss_beneficiarios_hospitales/html-samples/full-afiliado.html'
+                html = get_html_sample('full-afiliado')
         else:
             html = self.query_response.text
         self.parser = SSSParser(html)
@@ -163,4 +162,9 @@ class DataBeneficiariosSSSHospital:
             ret['error'] = error
         
         return ret
-            
+
+
+def get_html_sample(sample_name):
+    samples_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html-samples')
+    path = os.path.join(samples_folder, '{}.html'.format(sample_name))
+    return path
