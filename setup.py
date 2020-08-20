@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
      name='sss_beneficiarios_hospitales',
-     version='0.8.118',
+     version='0.8.119',
      license='MIT',
      entry_points={
         },
@@ -20,11 +20,8 @@ setuptools.setup(
      url="https://github.com/cluster311/sss-beneficiarios",
      install_requires=required,
      # package_dir={'': 'src'},
-     packages=['sss_beneficiarios_hospitales'],  # setuptools.find_packages(),
-     package_data = {
-        'html-samples': ['*']
-        },
      include_package_data=True,
+     packages=['sss_beneficiarios_hospitales'],  # setuptools.find_packages(),
      classifiers=[
          'Programming Language :: Python :: 3',
          'Programming Language :: Python :: 3.6',
