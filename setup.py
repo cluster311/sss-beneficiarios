@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
      name='sss_beneficiarios_hospitales',
-     version='0.8.116',
+     version='0.8.117',
      license='MIT',
      entry_points={
         },
@@ -21,6 +21,9 @@ setuptools.setup(
      install_requires=required,
      # package_dir={'': 'src'},
      packages=['sss_beneficiarios_hospitales'],  # setuptools.find_packages(),
+     package_data = {
+        'html-samples': ['*']
+        },
      classifiers=[
          'Programming Language :: Python :: 3',
          'Programming Language :: Python :: 3.6',
